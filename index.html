@@ -27,17 +27,17 @@
     ar
     ar-modes="webxr scene-viewer quick-look"
     camera-controls
+    autoplay
     style="background-color:#ffffff;">
 
-    <!-- AR Video -->
+    <!-- 视频作为 AR 平面的贴图 -->
     <video
-      slot="poster"
+      slot="texture"
       src="video.mp4"
       autoplay
       loop
       muted
-      playsinline
-      style="width:100%; height:auto;">
+      playsinline>
     </video>
 
   </model-viewer>
