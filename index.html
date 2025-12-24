@@ -3,43 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebAR Video</title>
-
-  <script type="module"
-    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-  </script>
+  <title>AR Video Project</title>
 
   <style>
     body {
       margin: 0;
-      background: #ffffff;
-    }
-    model-viewer {
-      width: 100vw;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
+    }
+    video {
+      width: 90vw;
+      max-width: 600px;
+      height: auto;
+    }
+    .hint {
+      position: fixed;
+      bottom: 20px;
+      color: #fff;
+      font-size: 14px;
+      opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
-  <model-viewer
-    src="https://modelviewer.dev/shared-assets/models/plane.glb"
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    camera-controls
+
+  <video
+    src="video.mp4"
     autoplay
-    style="background-color:#ffffff;">
+    loop
+    muted
+    playsinline
+    controls>
+  </video>
 
-    <!-- 视频作为 AR 平面的贴图 -->
-    <video
-      slot="texture"
-      src="video.mp4"
-      autoplay
-      loop
-      muted
-      playsinline>
-    </video>
+  <div class="hint">Scan QR code to view AR video extension</div>
 
-  </model-viewer>
 </body>
 </html>
